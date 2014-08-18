@@ -409,8 +409,7 @@ test tdbc::sqlite3-4.10 {failed execution} {*}{
 	rename $rs {}
     }
     -body {
-	set status [catch {$stmt execute {idnum 1 name barney}} result]
-	list $status $result
+	catch {$stmt execute {idnum 1 name barney}}
     }
     -cleanup {
 	rename $stmt {}
@@ -421,7 +420,7 @@ test tdbc::sqlite3-4.10 {failed execution} {*}{
 	rename $rs {}
 	rename $stmt {}
     }
-    -result {1 {PRIMARY KEY must be unique}}
+    -result 1
 }
 
 if 0 {
