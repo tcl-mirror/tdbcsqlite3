@@ -87,7 +87,7 @@ test tdbc::sqlite3-2.1 {prepare statement, wrong # args} {*}{
 
 test tdbc::sqlite3-2.2 {don't make a statement without a connection} {*}{
     -body {
-	tdbc::sqlite3::statement create stmt rubbish moreRubbish 
+	tdbc::sqlite3::statement create stmt rubbish moreRubbish
     }
     -returnCodes error
     -match glob
@@ -96,7 +96,7 @@ test tdbc::sqlite3-2.2 {don't make a statement without a connection} {*}{
 
 test tdbc::sqlite3-2.3 {don't make a statement without a connection} {*}{
     -body {
-	tdbc::sqlite3::statement create stmt oo::class moreRubbish 
+	tdbc::sqlite3::statement create stmt oo::class moreRubbish
     }
     -returnCodes error
     -match glob
@@ -461,7 +461,7 @@ test tdbc::sqlite3-5.2 {paramtype - just a direction} {*}{
     -match glob
     -result {wrong # args*}
 }
-    
+
 test tdbc::sqlite3-5.3 {paramtype - bad type} {*}{
     -setup {
 	set stmt [::db prepare {
@@ -639,7 +639,7 @@ test tdbc::sqlite3-8.1 {nextrow - as dicts} {*}{
     }
     -result {fred wilma pebbles barney betty bam-bam}
 }
-    
+
 test tdbc::sqlite3-8.2 {nextrow - as lists} {*}{
     -setup {
 	set stmt [::db prepare {
@@ -754,7 +754,7 @@ test tdbc::sqlite3-8.7 {null results - lists} {*}{
     }
     -result {1 {1 fred {}} 0}
 }
-	
+
 test tdbc::sqlite3-9.1 {rs foreach var script} {*}{
     -setup {
 	set stmt [::db prepare {
@@ -1487,7 +1487,7 @@ test tdbc::sqlite3-9.37 {rs foreach - too few args} {*}{
 	$stmt close
     }
     -returnCodes error
-    -result {wrong # args*} 
+    -result {wrong # args*}
     -match glob
 }
 
@@ -1504,7 +1504,7 @@ test tdbc::sqlite3-9.38 {stmt foreach - too few args} {*}{
 	$stmt close
     }
     -returnCodes error
-    -result {wrong # args*} 
+    -result {wrong # args*}
     -match glob
 }
 
@@ -1515,7 +1515,7 @@ test tdbc::sqlite3-9.39 {db foreach - too few args} {*}{
 	}
     }
     -returnCodes error
-    -result {wrong # args*} 
+    -result {wrong # args*}
     -match glob
 }
 
@@ -1527,14 +1527,14 @@ test tdbc::sqlite3-9.40 {rs foreach - too many args} {*}{
 	set rs [$stmt execute]
     }
     -body {
-	$rs foreach row do something 
+	$rs foreach row do something
     }
     -cleanup {
 	$rs close
 	$stmt close
     }
     -returnCodes error
-    -result {wrong # args*} 
+    -result {wrong # args*}
     -match glob
 }
 
@@ -1551,7 +1551,7 @@ test tdbc::sqlite3-9.41 {stmt foreach - too many args} {*}{
 	$stmt close
     }
     -returnCodes error
-    -result {wrong # args*} 
+    -result {wrong # args*}
     -match glob
 }
 
@@ -1562,7 +1562,7 @@ test tdbc::sqlite3-9.42 {db foreach - too many args} {*}{
 	} {} do something
     }
     -returnCodes error
-    -result {wrong # args*} 
+    -result {wrong # args*}
     -match glob
 }
 
@@ -1646,7 +1646,7 @@ test tdbc::sqlite3-10.6 {allrows --} {*}{
 	}
     }
     -result {{idnum 4 name barney} {idnum 5 name betty} {idnum 6 name bam-bam}}
-}    
+}
 
 test tdbc::sqlite3-10.7 {allrows -as lists} {*}{
     -setup {
@@ -1688,7 +1688,7 @@ test tdbc::sqlite3-10.9 {allrows -as lists} {*}{
     }
     -result {{4 barney} {5 betty} {6 bam-bam}}
 }
-    
+
 test tdbc::sqlite3-10.10 {allrows -as lists --} {*}{
     -setup {
 	set stmt [::db prepare {
@@ -1845,7 +1845,7 @@ test tdbc::sqlite3-10.20 {allrows - too many args} {*}{
 	$stmt close
     }
     -returnCodes error
-    -result {wrong # args*} 
+    -result {wrong # args*}
     -match glob
 }
 
@@ -2044,7 +2044,7 @@ test tdbc::sqlite3-13.4 {duplicate column names} {*}{
     -constraints knownBug
     -body {
 	::db allrows -as dicts -- {
-	    select a.name, b.name, c.name as "name#2" 
+	    select a.name, b.name, c.name as "name#2"
 	    from people a, people b, people c
 	    where a.idnum = 1
 	    and b.idnum = a.idnum + 1
@@ -2437,7 +2437,7 @@ test tdbc::sqlite3-16.3 {enumerate database tables} {*}{
     -body {
 	set dict [::db tables]
 	list [dict exists $dict people] [dict exists $dict property]
-    } 
+    }
     -result {1 0}
 }
 
@@ -2445,7 +2445,7 @@ test tdbc::sqlite3-16.4 {enumerate database tables} {*}{
     -body {
 	set dict [::db tables p%]
 	list [dict exists $dict people] [dict exists $dict property]
-    } 
+    }
     -result {1 0}
 }
 
@@ -2504,7 +2504,7 @@ test tdbc::sqlite3-17.4 {database columns - match pattern} {*}{
 test tdbc::sqlite3-18.1 {$statement params - excess arg} {*}{
     -setup {
 	set s [::db prepare {
-	    SELECT name FROM people 
+	    SELECT name FROM people
 	    WHERE name LIKE :pattern
 	    AND idnum >= :minid
 	}]
@@ -2513,7 +2513,7 @@ test tdbc::sqlite3-18.1 {$statement params - excess arg} {*}{
     }
     -body {
 	$s params excess
-    } 
+    }
     -cleanup {
 	rename $s {}
     }
@@ -2525,12 +2525,12 @@ test tdbc::sqlite3-18.1 {$statement params - excess arg} {*}{
 test tdbc::sqlite3-18.2 {$statement params - no params} {*}{
     -setup {
 	set s [::db prepare {
-	    SELECT name FROM people 
+	    SELECT name FROM people
 	}]
     }
     -body {
 	$s params
-    } 
+    }
     -cleanup {
 	rename $s {}
     }
@@ -2540,7 +2540,7 @@ test tdbc::sqlite3-18.2 {$statement params - no params} {*}{
 test tdbc::sqlite3-18.3 {$statement params - excess arg} {*}{
     -setup {
 	set s [::db prepare {
-	    SELECT name FROM people 
+	    SELECT name FROM people
 	    WHERE name LIKE :pattern
 	    AND idnum >= :minid
 	}]
@@ -2557,7 +2557,7 @@ test tdbc::sqlite3-18.3 {$statement params - excess arg} {*}{
 	    [dict get $d pattern direction] \
 	    [dict get $d pattern type] \
 	    [dict get $d pattern precision]
-    } 
+    }
     -cleanup {
 	rename $s {}
     }
@@ -2711,7 +2711,7 @@ test tdbc::sqlite3-23.1 {Primary keys - no arg} {*}{
     -returnCodes error
     -match glob
     -result {wrong # args*}
-} 
+}
 test tdbc::sqlite3-23.2 {Primary keys - no primary key} {*}{
     -body {
 	::db primarykeys d

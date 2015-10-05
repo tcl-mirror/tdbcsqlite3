@@ -98,5 +98,5 @@ TEA_PROG_TCLSH
 
 AC_OUTPUT([Makefile pkgIndex.tcl])
 
-# This is a comment added to force the 'execute' permission to update 
+# This is a comment added to force the 'execute' permission to update
 # in the Fossil repository.

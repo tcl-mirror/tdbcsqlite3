@@ -195,21 +195,21 @@
 	                          not to expect failure.
 	* doc/tdbc_sqlite3.n: Made changes so that NROFF formatting matches
 	                      the Tcl standard.
-	
+
 2008-04-16  Kevin B. Kenny  <kennykb@acm.org>
 
 	* README:			Advanced version number to 1.0b10
 	* configure.in:
 	* library/tdbcsqlite3.tcl:
 	* configure:			autoconf-2.59
-	
+
 2008-02-16  Kevin B. Kenny  <kennykb@acm.org>
 
 	* README:			Advanced version number to 1.0b9
 	* configure.in:
 	* library/tdbcsqlite3.tcl:
 	* configure:			autoconf-2.59
-	
+
 2008-01-31  Kevin B. Kenny  <kennykb@acm.org>
 
 	* README:			Advanced version number to 1.0b7
@@ -218,14 +218,14 @@
 	* library/tdbcsqlite3.tcl:	Changed ::errorCode returns to
 					follow TDBC [try]-friendly convention
 					TDBC errorClass sqlState driver detail
-	
+
 2008-01-05  Kevin B. Kenny  <kennykb@acm.org>
 
 	* README:			Advanced version number to 1.0b6
 	* configure.in:
 	* library/tdbcsqlite3.tcl:
 	* configure:			autoconf-2.59
-	
+
 2008-01-04  Kevin B. Kenny  <kennykb@acm.org>
 
 	* Makefile.in:			Changes to make 'make dist' work
@@ -233,21 +233,21 @@
 	* configure.in:
 	* library/tdbcsqlite3.tcl:
 	* configure:			autoconf-2.59
-	
+
 2008-12-30  Kevin B. Kenny  <kennykb@acm.org>
 
 	* README:			Advanced version number to 1.0b4
 	* configure.in:
 	* library/tdbcsqlite3.tcl:
 	* configure:			autoconf-2.59
-	
+
 2008-12-08  Kevin B. Kenny  <kennykb@acm.org>
 
 	* doc/tdbcsqlite3.n: Added a man page for the driver.
 	* library/tdbcsqlite3.tcl (configure):         Added a configurator for
 	* tests/tdbcsqlite3.test (tdbc::sqlite3-19.*): SQLite3 connections and
 	rudimentary test cases for connection configuration.
-	
+
 2008-12-07  Kevin B. Kenny  <kennykb@acm.org>
 
 	* Makefile.in:
@@ -257,22 +257,22 @@
 	* license.terms:
 	* pkgIndex.tcl.in:
 	* tclconfig/*:
-	* tests/all.tcl: 
+	* tests/all.tcl:
 	* tests/tdbcsqlite3.test:
 	Added infrastructure needed to make tdbc::sqlite3
 	a TEA-compliant module.  Advanced revision number to 1.0b1 in
 	preparation for release.
-	
+
 2008-06-11  Kevin B. Kenny  <kennykb@acm.org>
-	
-	* library/tdbcsqlite3.tcl: Split [$resultset nextrow] into two 
-	primitive methods: [$resultset nextlist] and [$resultset nextdict]. 
+
+	* library/tdbcsqlite3.tcl: Split [$resultset nextrow] into two
+	primitive methods: [$resultset nextlist] and [$resultset nextdict].
 
 2008-05-13  Kevin B. Kenny  <kennykb@acm.org>
 
 	* tests/tdbcsqlite3.test: Added cleanup for the test for
 	failing to open a database, in case we actually open it successfully.
-	
+
 2008-05-10  Kevin B. Kenny  <kennykb@acm.org>
 
 	* ChangeLog: Added a change log.

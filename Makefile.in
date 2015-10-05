@@ -15,13 +15,6 @@
 # RCS: @(#) $Id: Makefile.in,v 1.64 2007/10/23 22:08:06 hobbs Exp $
 
 #========================================================================
-# Add additional lines to handle any additional AC_SUBST cases that
-# have been added in a customized configure script.
-#========================================================================
-
-#SAMPLE_NEW_VAR	= @SAMPLE_NEW_VAR@
-
-#========================================================================
 # Nothing of the variables below this line should need to be changed.
 # Please check the TARGETS section below to make sure the make targets
 # are correct.
@@ -265,7 +258,7 @@ dist: dist-clean
 # variable in configure.in
 #========================================================================
 
-clean:  
+clean:
 	-rm -f *.core *.core
 	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
@@ -285,7 +278,7 @@ distclean: clean
 # You should not have to modify this target.
 #========================================================================
 
-install-lib-binaries: 
+install-lib-binaries:
 	@$(INSTALL_DATA_DIR) $(DESTDIR)$(pkgtmdir)
 	$(INSTALL_DATA) $(srcdir)/library/tdbcsqlite3.tcl \
 		$(DESTDIR)$(pkgtmfile)
