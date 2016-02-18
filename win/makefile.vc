@@ -175,7 +175,7 @@ PROJECT = tdbcsqlite
 !endif
 # get project version from row "AC_INIT([tdbcsqlite3], [1.0b17])"
 !if [echo DOTVERSION = \>> versions.vc] \
-   && [nmakehlp -V ..\configure.in tdbcsqlite3 >> versions.vc]
+   && [nmakehlp -V ..\configure.ac tdbcsqlite3 >> versions.vc]
 !endif
 !include "versions.vc"
 
