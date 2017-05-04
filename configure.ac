@@ -13,7 +13,7 @@ AC_INIT([tdbcsqlite3], [1.0.5])
 # as well as PKG_LIB_FILE and PKG_STUB_LIB_FILE.
 #--------------------------------------------------------------------
 
-TEA_INIT([3.9])
+TEA_INIT([3.10])
 AC_CONFIG_AUX_DIR(tclconfig)
 
 #--------------------------------------------------------------------
@@ -39,6 +39,20 @@ AC_SUBST(TDBC_LIB_FILE)
 #-----------------------------------------------------------------------
 
 TEA_PREFIX
+
+#-----------------------------------------------------------------------
+# These bits have no value to the tdbcsqlite3 configuration itself, but
+# we include them to avoid warnings about unrecognized options that
+# otherwise show up when conventional configurations happen, like that
+# in the Tcl+pkgs harness: --enable-threads, --disable-shared, etc.
+#-----------------------------------------------------------------------
+
+TEA_PUBLIC_TCL_HEADERS
+TEA_ENABLE_THREADS
+TEA_ENABLE_SHARED
+
+#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------
 
 AC_SUBST(TCL_VERSION)
 AC_SUBST(TCL_MAJOR_VERSION)
