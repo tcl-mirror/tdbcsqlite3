@@ -18,8 +18,18 @@ if {[lsearch [namespace children] ::tcltest] == -1} {
 loadTestedCommands
 package require tdbc::sqlite3
 
-set testdir [makeDirectory tdbctest]
-set testFileName test.db
+if {[info exists ::env(TDBCSQLITE3_TEST_DIR)]} {
+    set testDirName $::env(TDBCSQLITE3_TEST_DIR)
+} else {
+    set testDirName tdbctest
+}
+if {[info exists ::env(TDBCSQLITE3_TEST_FILE)]} {
+    set testFileName $::env(TDBCSQLITE3_TEST_FILE)
+} else {
+    set testFileName test.db
+}
+
+set testdir [makeDirectory $testDirName]
 set testDBName [makeFile {} $testFileName $testdir]
 catch {file delete -force $testDBName}
 
