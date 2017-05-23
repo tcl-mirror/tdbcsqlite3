@@ -18,11 +18,18 @@ if {[lsearch [namespace children] ::tcltest] == -1} {
 loadTestedCommands
 package require tdbc::sqlite3
 
-# Test setup.  We need a database to work on, so copy 'test.mdb' to a
-# temp file, and run from it.
+if {[info exists ::env(TDBCSQLITE3_TEST_DIR)]} {
+    set testDirName $::env(TDBCSQLITE3_TEST_DIR)
+} else {
+    set testDirName tdbctest
+}
+if {[info exists ::env(TDBCSQLITE3_TEST_FILE)]} {
+    set testFileName $::env(TDBCSQLITE3_TEST_FILE)
+} else {
+    set testFileName test.db
+}
 
-set testdir [makeDirectory tdbctest]
-set testFileName test.db
+set testdir [makeDirectory $testDirName]
 set testDBName [makeFile {} $testFileName $testdir]
 catch {file delete -force $testDBName}
 
