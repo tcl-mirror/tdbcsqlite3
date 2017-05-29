@@ -23,8 +23,8 @@ if {[info exists ::env(TDBCSQLITE3_TEST_DIR)]} {
 } else {
     set testDirName tdbctest
 }
-if {[info exists ::env(TDBCSQLITE3_TEST_FILE)]} {
-    set testFileName $::env(TDBCSQLITE3_TEST_FILE)
+if {[info exists ::env(TDBCSQLITE3_TEST_DB)]} {
+    set testFileName $::env(TDBCSQLITE3_TEST_DB)
 } else {
     set testFileName test.db
 }
