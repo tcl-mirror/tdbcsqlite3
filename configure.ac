@@ -29,6 +29,14 @@ TEA_LOAD_TCLCONFIG
 
 TEA_PATH_CONFIG(tdbc)
 TEA_LOAD_CONFIG(tdbc)
+# The next bit probably ought to be in TEA_LOAD_CONFIG
+AC_MSG_WARN([Looking for "${tdbc_BIN_DIR}/Makefile"])
+if test -f "${tdbc_BIN_DIR}/Makefile" ; then
+    AC_MSG_WARN([Found Makefile - using build include spec and lib specs for tdbc])
+    tdbc_INCLUDE_SPEC=${tdbc_BUILD_INCLUDE_SPEC}
+    tdbc_LIBRARY_PATH=${tdbc_BUILD_LIBRARY_PATH}
+fi
+AC_SUBST(tdbc_LIBRARY_PATH)
 AC_SUBST(TDBC_VERSION)
 AC_SUBST(tdbc_BIN_DIR)
 AC_SUBST(TDBC_LIB_FILE)
