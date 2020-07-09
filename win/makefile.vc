@@ -7,9 +7,9 @@
 #   nmake /s /nologo /f makefile.vc INSTALLDIR=c:\path\to\installdir TCLDIR=c:\path\to\tcl\source install
 #
 # For other build options (debug, static etc.)
-# See TIP 477 (https://core.tcl.tk/tips/doc/trunk/tip/477.md) for
+# See TIP 477 (https://core.tcl-lang.org/tips/doc/trunk/tip/477.md) for
 # detailed documentation.
-# 
+#
 # See the file "license.terms" for information on usage and redistribution
 # of this file, and for a DISCLAIMER OF ALL WARRANTIES.
 #
@@ -19,7 +19,7 @@ PROJECT = tdbcsqlite3
 !include "rules-ext.vc"
 
 # Pure Tcl extension, no object files
-PRJ_OBJS = 
+PRJ_OBJS =
 
 TM_INSTALL_DIR = $(_INSTALLDIR)\tcl$(TCL_MAJOR_VERSION)\$(TCL_MAJOR_VERSION).$(TCL_MINOR_VERSION)
 
